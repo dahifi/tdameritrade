@@ -101,15 +101,15 @@ class TestExtension:
             m.assert_called_with(method='POST',
                                  url='https://api.tdameritrade.com/v1/accounts/1234567/orders',
                                  params=None,
-                                 json=None)
+                                 json=json_order)
 
     def test_post_saved_orders(self, json_order, tdclient):
         with patch('tdameritrade.session.TDASession.request') as m:
             m.return_value.status_code = 201
             m.return_value.json.return_value = [MagicMock()]
-            tdclient.saved_orders('1234567', json_order)
+            tdclient.create_saved_orders('1234567', json_order)
             m.assert_called_with(method='POST',
                                  url='https://api.tdameritrade.com/v1/accounts/1234567/savedorders',
                                  params=None,
-                                 json=None)
+                                 json=json_order)
 
