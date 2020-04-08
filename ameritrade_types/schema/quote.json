@@ -1,0 +1,164 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Quote",
+    "definitions": {
+        "Quote": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Equity": {
+                    "$ref": "#/definitions/Equity"
+                }
+            },
+            "required": [],
+            "title": "Quote"
+        },
+        "Equity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "bidPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "bidSize": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "bidId": {
+                    "type": "string"
+                  },
+                  "askPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "askSize": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "askId": {
+                    "type": "string"
+                  },
+                  "lastPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "lastSize": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "lastId": {
+                    "type": "string"
+                  },
+                  "openPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "highPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "lowPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "closePrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "netChange": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "totalVolume": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "quoteTimeInLong": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "tradeTimeInLong": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "mark": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "exchange": {
+                    "type": "string"
+                  },
+                  "exchangeName": {
+                    "type": "string"
+                  },
+                  "marginable": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "shortable": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "volatility": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "digits": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "52WkHigh": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "52WkLow": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "peRatio": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "divAmount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "divYield": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "divDate": {
+                    "type": "string"
+                  },
+                  "securityStatus": {
+                    "type": "string"
+                  },
+                  "regularMarketLastPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "regularMarketLastSize": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "regularMarketNetChange": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "regularMarketTradeTimeInLong": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                },
+            "required": [],
+            "title": "Equity"
+        }
+    }
+}

@@ -1,0 +1,761 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/SecuritiesAccount"
+    },
+    "definitions": {
+        "SecuritiesAccount": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "accountId": {
+                    "type": "string"
+                },
+                "currentBalances": {
+                    "$ref": "#/definitions/currentBalances"
+                },
+                "isClosingOnlyRestricted": {
+                    "type": "boolean"
+                },
+                "isDayTrader": {
+                    "type": "boolean"
+                },
+                "orderStrategies": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OrderStrategy"
+                    }
+                },
+                "positions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Position"
+                    }
+                },
+                "roundTrips": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/TypeEnum"
+                }
+            },
+            "required": [],
+            "title": "SecuritiesAccount"
+        },
+        "OrderStrategy": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "accountId": {
+                    "type": "integer"
+                },
+                "activationPrice": {
+                    "type": "number"
+                },
+                "cancelable": {
+                    "type": "boolean"
+                },
+                "cancelTime": {
+                    "$ref": "#/definitions/CancelTime"
+                },
+                "childOrderStrategies": {
+                    "type": "array",
+                    "items": {}
+                },
+                "closeTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "complexOrderStrategyType": {
+                    "$ref": "#/definitions/ComplexOrderStrategyType"
+                },
+                "destinationLinkName": {
+                    "type": "string"
+                },
+                "duration": {
+                    "$ref": "#/definitions/Duration"
+                },
+                "editable": {
+                    "type": "boolean"
+                },
+                "enteredTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "filledQuantity": {
+                    "type": "number"
+                },
+                "orderActivityCollection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OrderActivityCollection"
+                    }
+                },
+                "orderId": {
+                    "type": "integer"
+                },
+                "orderLegCollection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OrderLegCollection"
+                    }
+                },
+                "orderStrategyType": {
+                    "$ref": "#/definitions/OrderStrategyType"
+                },
+                "orderType": {
+                    "$ref": "#/definitions/OrderType"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "priceLinkBasis": {
+                    "$ref": "#/definitions/PriceLinkBasis"
+                },
+                "priceLinkType": {
+                    "$ref": "#/definitions/PriceLinkType"
+                },
+                "quantity": {
+                    "type": "number"
+                },
+                "releaseTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "remainingQuantity": {
+                    "type": "number"
+                },
+                "replacingOrderCollection": {
+                    "type": "array",
+                    "items": {}
+                },
+                "requestedDestination": {
+                    "$ref": "#/definitions/RequestedDestination"
+                },
+                "session": {
+                    "$ref": "#/definitions/Session"
+                },
+                "specialInstruction": {
+                    "$ref": "#/definitions/SpecialInstruction"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "statusDescription": {
+                    "type": "string"
+                },
+                "stopPrice": {
+                    "type": "number"
+                },
+                "stopPriceLinkBasis": {
+                    "$ref": "#/definitions/PriceLinkBasis"
+                },
+                "stopPriceLinkType": {
+                    "$ref": "#/definitions/PriceLinkType"
+                },
+                "stopPriceOffset": {
+                    "type": "number"
+                },
+                "stopType": {
+                    "$ref": "#/definitions/StopType"
+                },
+                "tag": {
+                    "type": "string"
+                },
+                "taxLotMethod": {
+                    "$ref": "#/definitions/TaxLotMethod"
+                }
+            },
+            "required": [],
+            "title": "OrderStrategy"
+        },
+        "CancelTime": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "shortFormat": {
+                    "type": "boolean"
+                }
+            },
+            "required": [],
+            "title": "CancelTime"
+        },
+        "OrderActivityCollection": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "activityType": {
+                    "$ref": "#/definitions/ActivityType"
+                }
+            },
+            "required": [],
+            "title": "OrderActivityCollection"
+        },
+        "OrderLegCollection": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "instruction": {
+                    "$ref": "#/definitions/Instruction"
+                },
+                "instrument": {
+                    "$ref": "#/definitions/Instrument"
+                },
+                "legId": {
+                    "type": "integer"
+                },
+                "orderLegType": {
+                    "$ref": "#/definitions/Type"
+                },
+                "positionEffect": {
+                    "$ref": "#/definitions/PositionEffect"
+                },
+                "quantity": {
+                    "type": "number"
+                },
+                "quantityType": {
+                    "$ref": "#/definitions/QuantityType"
+                }
+            },
+            "required": [],
+            "title": "OrderLegCollection"
+        },
+        "Instrument": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "assetType": {
+                    "$ref": "#/definitions/Type"
+                },
+                "cusip": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "symbol": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Instrument"
+        },
+        "Position": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "agedQuantity": {
+                    "type": "number"
+                },
+                "averagePrice": {
+                    "type": "number"
+                },
+                "currentDayProfitLoss": {
+                    "type": "number"
+                },
+                "currentDayProfitLossPercentage": {
+                    "type": "number"
+                },
+                "instrument": {
+                    "$ref": "#/definitions/Instrument"
+                },
+                "longQuantity": {
+                    "type": "number"
+                },
+                "marketValue": {
+                    "type": "number"
+                },
+                "settledLongQuantity": {
+                    "type": "number"
+                },
+                "settledShortQuantity": {
+                    "type": "number"
+                },
+                "shortQuantity": {
+                    "type": "number"
+                }
+            },
+            "required": [],
+            "title": "Position"
+        },
+        "ComplexOrderStrategyType": {
+            "type": "string",
+            "enum": [
+                "NONE",
+                "COVERED",
+                "VERTICAL",
+                "BACK_RATIO",
+                "CALENDAR",
+                "DIAGONAL",
+                "STRADDLE",
+                "STRANGLE",
+                "COLLAR_SYNTHETIC",
+                "BUTTERFLY",
+                "CONDOR",
+                "IRON_CONDOR",
+                "VERTICAL_ROLL",
+                "COLLAR_WITH_STOCK",
+                "DOUBLE_DIAGONAL",
+                "UNBALANCED_BUTTERFLY",
+                "UNBALANCED_CONDOR",
+                "UNBALANCED_IRON_CONDOR",
+                "UNBALANCED_VERTICAL_ROLL",
+                "CUSTOM"
+            ],
+            "title": "ComplexOrderStrategyType"
+        },
+        "Duration": {
+            "type": "string",
+            "enum": [
+                "DAY",
+                "GOOD_TILL_CANCEL",
+                "FILL_OR_KILL"
+            ],
+            "title": "Duration"
+        },
+        "ActivityType": {
+            "type": "string",
+            "enum": [
+                "EXECUTION",
+                "ORDER_ACTION"
+            ],
+            "title": "ActivityType"
+        },
+        "Instruction": {
+            "type": "string",
+            "enum": [
+                "BUY",
+                "SELL",
+                "BUY_TO_COVER",
+                "SELL_SHORT",
+                "BUY_TO_OPEN",
+                "BUY_TO_CLOSE",
+                "SELL_TO_OPEN",
+                "SELL_TO_CLOSE",
+                "EXCHANGE"
+            ],
+            "title": "Instruction"
+        },
+        "Type": {
+            "type": "string",
+            "enum": [
+                "EQUITY",
+                "OPTION",
+                "INDEX",
+                "MUTUAL_FUND",
+                "CASH_EQUIVALENT",
+                "FIXED_INCOME",
+                "CURRENCY"
+            ],
+            "title": "Type"
+        },
+        "PositionEffect": {
+            "type": "string",
+            "enum": [
+                "OPENING",
+                "CLOSING",
+                "AUTOMATIC"
+            ],
+            "title": "PositionEffect"
+        },
+        "QuantityType": {
+            "type": "string",
+            "enum": [
+                "ALL_SHARES",
+                "DOLLARS",
+                "SHARES"
+            ],
+            "title": "QuantityType"
+        },
+        "OrderStrategyType": {
+            "type": "string",
+            "enum": [
+                "SINGLE",
+                "OCO",
+                "TRIGGER"
+            ],
+            "title": "OrderStrategyType"
+        },
+        "OrderType": {
+            "type": "string",
+            "enum": [
+                "MARKET",
+                "LIMIT",
+                "STOP",
+                "STOP_LIMIT",
+                "TRAILING_STOP",
+                "MARKET_ON_CLOSE",
+                "EXERCISE",
+                "TRAILING_STOP_LIMIT",
+                "NET_DEBIT",
+                "NET_CREDIT",
+                "NET_ZERO"
+            ],
+            "title": "OrderType"
+        },
+        "PriceLinkBasis": {
+            "type": "string",
+            "enum": [
+                "MANUAL",
+                "BASE",
+                "TRIGGER",
+                "LAST",
+                "BID",
+                "ASK",
+                "ASK_BID",
+                "MARK",
+                "AVERAGE"
+            ],
+            "title": "PriceLinkBasis"
+        },
+        "PriceLinkType": {
+            "type": "string",
+            "enum": [
+                "VALUE",
+                "PERCENT",
+                "TICK"
+            ],
+            "title": "PriceLinkType"
+        },
+        "RequestedDestination": {
+            "type": "string",
+            "enum": [
+                "INET",
+                "ECN_ARCA",
+                "CBOE",
+                "AMEX",
+                "PHLX",
+                "ISE",
+                "BOX",
+                "NYSE",
+                "NASDAQ",
+                "BATS",
+                "C2",
+                "AUTO"
+            ],
+            "title": "RequestedDestination"
+        },
+        "Session": {
+            "type": "string",
+            "enum": [
+                "NORMAL",
+                "AM",
+                "PM",
+                "SEAMLESS"
+            ],
+            "title": "Session"
+        },
+        "SpecialInstruction": {
+            "type": "string",
+            "enum": [
+                "ALL_OR_NONE",
+                "DO_NOT_REDUCE",
+                "ALL_OR_NONE_DO_NOT_REDUCE"
+            ],
+            "title": "SpecialInstruction"
+        },
+        "Status": {
+            "type": "string",
+            "enum": [
+                "AWAITING_PARENT_ORDER",
+                "AWAITING_CONDITION",
+                "AWAITING_MANUAL_REVIEW",
+                "ACCEPTED",
+                "AWAITING_UR_OUT",
+                "PENDING_ACTIVATION",
+                "QUEUED",
+                "WORKING",
+                "REJECTED",
+                "PENDING_CANCEL",
+                "CANCELED",
+                "PENDING_REPLACE",
+                "REPLACED",
+                "FILLED",
+                "EXPIRED"
+            ],
+            "title": "Status"
+        },
+        "StopType": {
+            "type": "string",
+            "enum": [
+                "STANDARD",
+                "BID",
+                "ASK",
+                "LAST",
+                "MARK"
+            ],
+            "title": "StopType"
+        },
+        "TaxLotMethod": {
+            "type": "string",
+            "enum": [
+                "FIFO",
+                "LIFO",
+                "HIGH_COST",
+                "LOW_COST",
+                "AVERAGE_COST",
+                "SPECIFIC_LOT"
+            ],
+            "title": "TaxLotMethod"
+        },
+        "TypeEnum": {
+            "type": "string",
+            "enum": [
+                "CASH",
+                "MARGIN"
+            ],
+            "title": "TypeEnum"
+        },
+        "initialBalances": {
+            "type": "object",
+            "properties": {
+                "accruedInterest": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashAvailableForTrading": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashAvailableForWithdrawal": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashBalance": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "bondValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashReceipts": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "liquidationValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longOptionMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longStockValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "moneyMarketFund": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "mutualFundValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "shortOptionMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "shortStockValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "isInCall": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "unsettledCash": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashDebitCallValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "pendingDeposits": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "accountValue": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "currentBalances": {
+            "type": "object",
+            "properties": {
+                "accruedInterest": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashBalance": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashReceipts": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longOptionMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "liquidationValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "moneyMarketFund": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "savings": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "shortMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "pendingDeposits": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashAvailableForTrading": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashAvailableForWithdrawal": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashCall": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longNonMarginableMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "totalCash": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "shortOptionMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "mutualFundValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "bondValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashDebitCallValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "unsettledCash": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "projectedBalances": {
+            "type": "object",
+            "properties": {
+                "accruedInterest": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashBalance": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashReceipts": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longOptionMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "liquidationValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "moneyMarketFund": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "savings": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "shortMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "pendingDeposits": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashAvailableForTrading": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashAvailableForWithdrawal": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashCall": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "longNonMarginableMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "totalCash": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "shortOptionMarketValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "mutualFundValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "bondValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "cashDebitCallValue": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "unsettledCash": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        }
+    }
+}
